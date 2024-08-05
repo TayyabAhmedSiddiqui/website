@@ -1087,3 +1087,9 @@ section {
   color: #37b3ed;
   text-decoration: underline;
 }
+
+.project-wrap img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
