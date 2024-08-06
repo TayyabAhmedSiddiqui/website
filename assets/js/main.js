@@ -186,6 +186,33 @@
 
   });
 
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.education-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.education-item'
+      });
+
+      let portfolioFilters = select('#education-flters li', true);
+
+      on('click', '#education-flters li', function (e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function (el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function () {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
+
   /**
    * Initiate project lightbox 
    */
