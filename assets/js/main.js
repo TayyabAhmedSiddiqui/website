@@ -160,58 +160,66 @@
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.project-container');
+    let portfolioContainer = document.querySelector('.project-container');
     if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.project-item'
-      });
+        let portfolioIsotope = new Isotope(portfolioContainer, {
+            itemSelector: '.project-item'
+        });
 
-      let portfolioFilters = select('#project-flters li', true);
+        let portfolioFilters = document.querySelectorAll('#project-flters li');
 
-      on('click', '#project-flters li', function (e) {
-        e.preventDefault();
         portfolioFilters.forEach(function (el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                portfolioFilters.forEach(function (el) {
+                    el.classList.remove('filter-active');
+                });
+                this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+                portfolioIsotope.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+                portfolioIsotope.on('arrangeComplete', function () {
+                    AOS.refresh();
+                });
+            });
         });
-        portfolioIsotope.on('arrangeComplete', function () {
-          AOS.refresh()
-        });
-      }, true);
+
+        // Trigger click event on CTH filter button to set the default filter
+        document.querySelector('#project-flters li[data-filter=".filter-cth"]').click();
     }
-
-  });
+});
 
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.education-container');
+    let portfolioContainer = document.querySelector('.education-container');
     if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.education-item'
-      });
+        let portfolioIsotope = new Isotope(portfolioContainer, {
+            itemSelector: '.education-item'
+        });
 
-      let portfolioFilters = select('#education-flters li', true);
+        let portfolioFilters = document.querySelectorAll('#education-flters li');
 
-      on('click', '#education-flters li', function (e) {
-        e.preventDefault();
         portfolioFilters.forEach(function (el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                portfolioFilters.forEach(function (el) {
+                    el.classList.remove('filter-active');
+                });
+                this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+                portfolioIsotope.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+                portfolioIsotope.on('arrangeComplete', function () {
+                    AOS.refresh();
+                });
+            });
         });
-        portfolioIsotope.on('arrangeComplete', function () {
-          AOS.refresh()
-        });
-      }, true);
+
+        // Trigger click event on High School filter button to set the default filter
+        document.querySelector('#education-flters li[data-filter=".filter-certificate"]').click();
     }
-
-  });
+});
 
   /**
    * Initiate project lightbox 
