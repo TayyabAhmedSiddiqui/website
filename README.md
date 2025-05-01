@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Website Preview](https://hamzasid020.github.io/website)
+[Website Preview](https://hamzasid020.github.io/website)
 
 A responsive, modern static portfolio website built with HTML, CSS, JavaScript, and Bootstrap. Showcases projects, skills, education, and certifications.
 
