@@ -1,0 +1,662 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "CTH Project 1",
+      "category": "cth",
+      "image": "assets/img/project/cth/project-1.jpg",
+      "lightboxTitle": "App 1"
+    },
+    {
+      "id": 2,
+      "title": "CTH Project 2",
+      "category": "cth",
+      "image": "assets/img/project/cth/project-2.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 3,
+      "title": "LiveOps System 1",
+      "category": "liveops",
+      "image": "assets/img/project/liveops/project-6.jpg",
+      "lightboxTitle": "App 3"
+    },
+    {
+      "id": 4,
+      "title": "CTH Project 3",
+      "category": "cth",
+      "image": "assets/img/project/cth/project-3.jpg",
+      "lightboxTitle": "App 2"
+    },
+    {
+      "id": 5,
+      "title": "LiveOps System 2",
+      "category": "liveops",
+      "image": "assets/img/project/liveops/project-7.jpg",
+      "lightboxTitle": "Card 1"
+    },
+    {
+      "id": 6,
+      "title": "CTH Project 4",
+      "category": "cth",
+      "image": "assets/img/project/cth/project-4.jpg",
+      "lightboxTitle": "Card 2"
+    },
+    {
+      "id": 7,
+      "title": "Fitness App",
+      "category": "fitness-app",
+      "image": "assets/img/project/fitness/fitness.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 8,
+      "title": "CTH Project 5",
+      "category": "cth",
+      "image": "assets/img/project/cth/project-5.jpg",
+      "lightboxTitle": "Web 2"
+    },
+    {
+      "id": 9,
+      "title": "LiveOps System 3",
+      "category": "liveops",
+      "image": "assets/img/project/liveops/project-8.jpg",
+      "lightboxTitle": "Card 3"
+    },
+    {
+      "id": 10,
+      "title": "Chemical 101",
+      "category": "chemical101",
+      "image": "assets/img/project/chemical101/project-13.jpg",
+      "lightboxTitle": "Web Scraping project"
+    },
+    {
+      "id": 11,
+      "title": "MediVault 1",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-14.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 12,
+      "title": "MediVault 2",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-15.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 13,
+      "title": "MediVault 3",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-16.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 14,
+      "title": "MediVault 4",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-17.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 15,
+      "title": "MediVault 5",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-18.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 16,
+      "title": "MediVault 6",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-19.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 17,
+      "title": "MediVault 7",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-20.jpg",
+      "lightboxTitle": ""
+    },
+    {
+      "id": 18,
+      "title": "MediVault 8",
+      "category": "medivault",
+      "image": "assets/img/project/medivault/project-21.jpg",
+      "lightboxTitle": ""
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "title": "Cloud Architecture & Administration",
+      "category": "graduate",
+      "image": "assets/img/education/graduate/education-1.jpg",
+      "description": "Graduate Certificate | Seneca College"
+    },
+    {
+      "id": 2,
+      "title": "BEng Robotic Engineering",
+      "category": "graduate",
+      "image": "assets/img/education/graduate/education-2.jpg",
+      "description": "University of Essex, UK"
+    },
+    {
+      "id": 3,
+      "title": "IELTS",
+      "category": "ielts",
+      "image": "assets/img/education/ielts/education-3.jpg",
+      "description": "English Language Proficiency"
+    },
+    {
+      "id": 4,
+      "title": "IELTS",
+      "category": "ielts",
+      "image": "assets/img/education/ielts/education-4.jpg",
+      "description": "English Language Proficiency"
+    },
+    {
+      "id": 5,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-5.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 6,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-6.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 7,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-7.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 8,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-8.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 9,
+      "title": "SAT",
+      "category": "sat",
+      "image": "assets/img/education/sat/education-9.jpg",
+      "description": "Standardized Test"
+    },
+    {
+      "id": 10,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-10.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 11,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-11.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 12,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-15.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 13,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-16.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 14,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-19.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 15,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-27.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 16,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-29.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 17,
+      "title": "High School",
+      "category": "highschool",
+      "image": "assets/img/education/highschool/education-33.jpg",
+      "description": "High School Education"
+    },
+    {
+      "id": 18,
+      "title": "Middle School",
+      "category": "middleschool",
+      "image": "assets/img/education/middleschool/education-12.jpg",
+      "description": "Middle School Education"
+    },
+    {
+      "id": 19,
+      "title": "Middle School",
+      "category": "middleschool",
+      "image": "assets/img/education/middleschool/education-20.jpg",
+      "description": "Middle School Education"
+    },
+    {
+      "id": 20,
+      "title": "Middle School",
+      "category": "middleschool",
+      "image": "assets/img/education/middleschool/education-21.jpg",
+      "description": "Middle School Education"
+    },
+    {
+      "id": 21,
+      "title": "Middle School",
+      "category": "middleschool",
+      "image": "assets/img/education/middleschool/education-30.jpg",
+      "description": "Middle School Education"
+    },
+    {
+      "id": 22,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-13.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 23,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-18.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 24,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-22.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 25,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-23.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 26,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-24.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 27,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-25.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 28,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-26.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 29,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-28.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 30,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-31.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 31,
+      "title": "Primary School",
+      "category": "primaryschool",
+      "image": "assets/img/education/primaryschool/education-32.jpg",
+      "description": "Primary School Education"
+    },
+    {
+      "id": 32,
+      "title": "IELTS 2025",
+      "category": "ielts",
+      "image": "assets/img/education/ielts/education-33.jpg",
+      "description": "English Language Proficiency"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "CCNA Routing and Switching",
+      "icon": "bi bi-router",
+      "image": "assets/img/certifications/certificate-3.jpg",
+      "link": "https://shorturl.at/novxF",
+      "delay": 0
+    },
+    {
+      "id": 2,
+      "title": "ROS for Beginners",
+      "icon": "bi bi-robot",
+      "image": "assets/img/certifications/certificate-8.jpg",
+      "link": "https://shorturl.at/hOVYZ",
+      "delay": 120
+    },
+    {
+      "id": 3,
+      "title": "Bright Network Internship",
+      "icon": "bi bi-bar-chart",
+      "image": "assets/img/certifications/certificate-7.jpg",
+      "link": "https://shorturl.at/aMZ57",
+      "delay": 200
+    },
+    {
+      "id": 4,
+      "title": "First Aid & CPR/AED Level C",
+      "icon": "bi bi-heart-pulse",
+      "image": "assets/img/certifications/certificate-4.jpg",
+      "link": "https://shorturl.at/qxDN0",
+      "delay": 300
+    },
+    {
+      "id": 5,
+      "title": "Artificial Intelligence",
+      "icon": "bi bi-cpu",
+      "image": "assets/img/certifications/certificate-2.jpg",
+      "link": "https://shorturl.at/hmBJ1",
+      "delay": 400
+    },
+    {
+      "id": 6,
+      "title": "What Great Leaders Know & Do",
+      "icon": "bi bi-trophy",
+      "image": "assets/img/certifications/certificate-6.jpg",
+      "link": "https://shorturl.at/lyEY7",
+      "delay": 500
+    },
+    {
+      "id": 7,
+      "title": "Smart Serve",
+      "icon": "bi bi-cup-straw",
+      "image": "assets/img/certifications/certificate-11.png",
+      "link": "",
+      "delay": 400
+    },
+    {
+      "id": 8,
+      "title": "Cancer Research Fund Raise",
+      "icon": "bi bi-coin",
+      "image": "assets/img/certifications/certificate-12.jpg",
+      "link": "",
+      "delay": 400
+    },
+    {
+      "id": 9,
+      "title": "Scuba Diving",
+      "icon": "bi bi-life-preserver",
+      "image": "assets/img/certifications/certificate-13.jpg",
+      "link": "",
+      "delay": 400
+    },
+    {
+      "id": 10,
+      "title": "Use of Force | Baton & Handcuffing",
+      "icon": "bi bi-shield-check",
+      "image": "assets/img/certifications/certificate-14.jpg",
+      "link": "",
+      "delay": 400
+    },
+    {
+      "id": 11,
+      "title": "Serving All Customers",
+      "icon": "bi bi-person-circle",
+      "image": "assets/img/certifications/certificate-15.jpg",
+      "link": "",
+      "delay": 400
+    },
+    {
+      "id": 12,
+      "title": "Worker Health & Safety Awareness in 4 Steps",
+      "icon": "bi bi-person-fill-check",
+      "image": "assets/img/certifications/certificate-16.png",
+      "link": "https://rb.gy/p7mlx5",
+      "delay": 400
+    },
+    {
+      "id": 13,
+      "title": "AWS Academy Cloud Foundations",
+      "icon": "bi bi-amazon",
+      "image": "assets/img/certifications/certificate-17.jpg",
+      "link": "https://www.credly.com/go/ks9AkrTy",
+      "delay": 400
+    },
+    {
+      "id": 14,
+      "title": "AWS Cloud Practitioner Essentials",
+      "icon": "bi bi-amazon",
+      "image": "assets/img/certifications/certificate-18.jpg",
+      "link": "https://www.credly.com/go/ks9AkrTy",
+      "delay": 400
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "Hamza is one of the most dependable classmates, consistently meeting project deadlines while maintaining clear, prompt, and effective communication to ensure efficient task completion. These qualities are invaluable for succeeding in real-world projects. Wishing you all the best in your future endeavors!",
+      "image": "assets/img/testimonials/testimonials-9.jpg",
+      "name": "John Caranay",
+      "role": "Cloud Enthusiast | Full-Stack Developer",
+      "delay": 300
+    },
+    {
+      "id": 2,
+      "quote": "Hamza is a good friend. He’s good at communicating and makes it easy to understand things. He’s smart with technology and picks up new concepts really fast. I also appreciate how he’s always coming up with plans and taking the initiative to get things started.",
+      "image": "assets/img/testimonials/testimonials-10.jpg",
+      "name": "Arpit Gupta",
+      "role": "DevOps & Cloud Engineer",
+      "delay": 300
+    },
+    {
+      "id": 3,
+      "quote": "I had the pleasure of studying alongside Hamza at Seneca Polytechnic, and I can say without hesitation that he’s one of the most reliable and driven classmates I’ve ever worked with. Whether tackling tight deadlines or complex technical challenges, Hamza consistently demonstrates clear, proactive communication and a remarkable ability to learn new concepts on the fly. His knack for leading group projects combined with genuine enthusiasm for collaboration ensures that every team he joins not only meets its goals, but does so with efficiency and a positive spirit. Any organization would be lucky to have his blend of technical aptitude, initiative, and unwavering professionalism.",
+      "image": "assets/img/testimonials/testimonials-11.jpg",
+      "name": "Rupesh Vanneldas",
+      "role": "Full-Stack Developer | Cloud Engineer",
+      "delay": 300
+    },
+    {
+      "id": 4,
+      "quote": "I worked with Hamza as a fellow software engineer while working at DAI. He is an exceptional engineer with a positive attitude towards solving challenges. He doesn't hesitate to learn more in order to help other team members solve complex tasks. He cares for the quality of the code he writes as well as the efficacy of it. A strong minded individual who can deliver and match expectations both in a team and on his own.",
+      "image": "assets/img/testimonials/testimonials-1.jpg",
+      "name": "Farshad Haghighi",
+      "role": "Software Engineer | Senapt",
+      "delay": 0
+    },
+    {
+      "id": 5,
+      "quote": "While working with Hamza under his leadership I can confidently say that he has an exceptional work ethic, insatiable curiosity, and eagerness to learn. He consistently delivers high-quality results, maintains a positive attitude under pressure, and seeks to understand the underlying principles of his work. He also maintains high level of professionalism and always puts the team ahead of himself!",
+      "image": "assets/img/testimonials/testimonials-2.jpg",
+      "name": "Ahmed Said",
+      "role": "Associate Planning Specialist | National Grid",
+      "delay": 100
+    },
+    {
+      "id": 6,
+      "quote": "Hamza is a remarkable individual who actively pursues opportunities for personal and professional growth. Having collaborated with him on a personal project, I can attest to his unwavering motivation and his ability to find solutions amidst numerous trials and errors. What sets Hamza apart is his dedication to teamwork—he's always available to offer assistance and eager to learn alongside his colleagues. Moreover, he possesses a remarkable ability to grasp both back-end and front-end web development concepts, making him an invaluable resource for anyone looking to expand their knowledge in these areas.",
+      "image": "assets/img/testimonials/testimonials-8.jpg",
+      "name": "Wahaj Siddiqui",
+      "role": "Data Analyst",
+      "delay": 300
+    },
+    {
+      "id": 7,
+      "quote": "I had the privilege of working closely on a project with Hamza. During our collaboration, I had the opportunity to witness firsthand Hamza's exceptional management skills and technical coding prowess. He exhibited outstanding communication skills, ensuring that everyone on the team was well-informed about project goals, deadlines, and responsibilities. Furthermore, Hamza's technical coding skills were truly remarkable. He consistently produced high-quality code that not only met but often exceeded our project's requirements. His attention to detail and dedication to writing clean, efficient, and well-documented code were instrumental in the success of our project. I have no doubt that Hamza would be an asset to any team or organization fortunate enough to have him on board.",
+      "image": "assets/img/testimonials/testimonials-7.jpg",
+      "name": "Ebadullah Khan",
+      "role": "Data Engineer | Data Science Dojo",
+      "delay": 300
+    },
+    {
+      "id": 8,
+      "quote": "Hamza is a hard working individual who strives to put all his effort into whatever task he is allocated. He has the ability to stimulate and motivate others and push them to work together and achieve goals previously thought unaccomplishable. He takes the initiative to be proactive and is always the first to suggest solutions to problems. Hamza's ability to communicate and work in a team makes him an asset to any team he's part of while also being a pleasure to work with. I would recommend Hamza to any company that wants help in achieving its goals.",
+      "image": "assets/img/testimonials/testimonials-4.jpg",
+      "name": "Jeremiah Mushtaq",
+      "role": "Molecular R&D Scientist | Randox Laboratories",
+      "delay": 400
+    },
+    {
+      "id": 9,
+      "quote": "I had the privilege of working closely with Hamza during our time together at Dematic Software. As well as being a really friendly and bubbly individual, Hamza played a pivotal role in the development and success of our statistics and data analysis application CTH (Central Technology Hub). He skilfully designed and implemented crucial API endpoints using his knowledge of C, Postman, JSON, JavaScript and HTTP, which greatly contributed to the application's robustness and efficiency. In addition to his technical prowess, Hamza showed great collaboration and communication skills and is a really great team player. He is also a confident independent worker who is reliable and is always readily available to provide assistance.",
+      "image": "assets/img/testimonials/testimonials-6.jpg",
+      "name": "Shahid Neki",
+      "role": "Software Engineer | Dematic Software",
+      "delay": 300
+    },
+    {
+      "id": 10,
+      "quote": "During our time at university, Hamza stood out as a natural leader, steering our team to success with his innovative problem-solving skills. He has a knack for recognizing and nurturing each person's strengths, fostering a collaborative and joyful working environment. As a friend, he's been nothing short of wonderful, always bringing warmth and understanding to our group. Hamza is not just a brilliant mind but a person with a golden heart, making him a true asset to any team. I highly recommend him for any endeavor he chooses to pursue.",
+      "image": "assets/img/testimonials/testimonials-3.jpg",
+      "name": "Anupam Ghosal",
+      "role": "Founder | Riple Technologies",
+      "delay": 200
+    },
+    {
+      "id": 11,
+      "quote": "I highly recommend Hamza as an outstanding professional. He is dedicated, skilled, and a true team player. His contributions have consistently impressed me, and he would be a valuable asset to any organization.",
+      "image": "assets/img/testimonials/testimonials-5.jpg",
+      "name": "Choudhary Saif Ali",
+      "role": "Flutter Developer | Cybersecurity Enthusiast",
+      "delay": 300
+    }
+  ],
+  "skills":[
+    {
+      "name": "JavaScript",
+      "level": 80,
+      "category": "frontend"
+    },
+    {
+      "name": "TypeScript",
+      "level": 85,
+      "category": "frontend"
+    },
+    {
+      "name": "Node.js",
+      "level": 90,
+      "category": "backend"
+    },
+    {
+      "name": "Python",
+      "level": 90,
+      "category": "backend"
+    },
+    {
+      "name": "Java",
+      "level": 75,
+      "category": "backend"
+    },
+    {
+      "name": "C# (.NET)",
+      "level": 75,
+      "category": "backend"
+    },
+    {
+      "name": "MySQL",
+      "level": 100,
+      "category": "database"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 100,
+      "category": "database"
+    },
+    {
+      "name": "MongoDB",
+      "level": 95,
+      "category": "database"
+    },
+    {
+      "name": "DynamoDB",
+      "level": 90,
+      "category": "database"
+    },
+    {
+      "name": "AWS",
+      "level": 95,
+      "category": "cloud"
+    },
+    {
+      "name": "Terraform",
+      "level": 85,
+      "category": "devops"
+    },
+    {
+      "name": "Kubernetes",
+      "level": 90,
+      "category": "devops"
+    },
+    {
+      "name": "Docker",
+      "level": 90,
+      "category": "devops"
+    },
+    {
+      "name": "CI/CD",
+      "level": 90,
+      "category": "devops"
+    },
+    {
+      "name": "Cloud Native",
+      "level": 90,
+      "category": "cloud"
+    },
+    {
+      "name": "Configuration Management",
+      "level": 85,
+      "category": "devops"
+    },
+    {
+      "name": "Cloud Security",
+      "level": 90,
+      "category": "security"
+    },
+    {
+      "name": "Network Security",
+      "level": 90,
+      "category": "security"
+    },
+    {
+      "name": "Communication Skills",
+      "level": 95,
+      "category": "soft skills"
+    }
+  ]
+}
