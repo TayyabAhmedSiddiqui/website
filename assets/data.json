@@ -75,56 +75,80 @@
       "title": "MediVault 1",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-14.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 12,
       "title": "MediVault 2",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-15.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 13,
       "title": "MediVault 3",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-16.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 14,
       "title": "MediVault 4",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-17.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 15,
       "title": "MediVault 5",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-18.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 16,
       "title": "MediVault 6",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-19.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 17,
       "title": "MediVault 7",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-20.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
     },
     {
       "id": 18,
       "title": "MediVault 8",
       "category": "medivault",
       "image": "assets/img/project/medivault/project-21.jpg",
-      "lightboxTitle": ""
+      "lightboxTitle": "",
+      "github": "https://github.com/HamzaSid020/MediVault"
+    },
+    {
+      "id": 19,
+      "title": "MediTrack 1",
+      "category": "meditrack",
+      "youtubeId": "dkDvUmeWc_s",
+      "lightboxTitle": "Demo Video",
+      "github": "https://github.com/Maverics-Seneca/Capstone-Project"
+    },
+    {
+      "id": 20,
+      "title": "MediTrack 2",
+      "category": "meditrack",
+      "youtubeId": "Yfp7UqUJ9O4",
+      "lightboxTitle": "Presentation Video",
+      "github": "https://github.com/Maverics-Seneca/Capstone-Project"
     }
   ],
   "education": [

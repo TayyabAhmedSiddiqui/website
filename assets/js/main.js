@@ -164,19 +164,20 @@
       const response = await fetch('assets/data.json');
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
-  
+
       renderProjects(data.projects);
       renderEducation(data.education);
       renderCertifications(data.certifications);
       renderTestimonials(data.testimonials);
       renderSkills(data.skills); // Add this line
-  
+
       // Initialize Isotope after data is loaded
       initIsotopeFilters();
     } catch (error) {
       console.error('Error loading data:', error);
     }
   };
+
 
   /**
    * Render Projects
@@ -185,22 +186,50 @@
     const container = select('.project-container');
     if (!container) return;
 
-    container.innerHTML = projects.map(project => `
-      <div class="col-lg-4 col-md-6 project-item filter-${project.category}">
-        <div class="project-wrap">
-          <img src="${project.image}" class="img-fluid" alt="${project.title || ''}">
-          <div class="project-links">
-            <a href="${project.image}" data-gallery="portfolioGallery" 
-               class="project-lightbox" title="${project.lightboxTitle || project.title || ''}">
+    container.innerHTML = projects.map(project => {
+      const useYoutubeThumbnail = project.youtubeId && !project.image;
+      const thumbnailSrc = useYoutubeThumbnail
+        ? `https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg`
+        : project.image;
+
+      return `
+    <div class="col-lg-4 col-md-6 project-item filter-${project.category}">
+      <div class="project-wrap">
+        <img src="${thumbnailSrc}" class="img-fluid" alt="${project.title || ''}">
+        <div class="project-links">
+          ${useYoutubeThumbnail ? `
+            <a href="https://www.youtube.com/watch?v=${project.youtubeId}" 
+               data-gallery="portfolioGallery" 
+               class="project-lightbox" 
+               title="${project.lightboxTitle || project.title || ''}">
+              <i class="bx bx-play"></i>
+            </a>
+          ` : `
+            <a href="${project.image}" 
+               data-gallery="portfolioGallery" 
+               class="project-lightbox" 
+               title="${project.lightboxTitle || project.title || ''}">
               <i class="bx bx-plus"></i>
             </a>
-            <a href="#project" title="More Details"><i class="bx bx-link"></i></a>
-          </div>
+          `}
+          ${project.github ? `
+            <a href="${project.github}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               title="View on GitHub">
+              <i class="bx bxl-github"></i>
+            </a>
+          ` : `
+            <a href="#project" title="More Details">
+              <i class="bx bx-link"></i>
+            </a>
+          `}
         </div>
       </div>
-    `).join('');
+    </div>
+    `;
+    }).join('');
   };
-
 
   /**
    * Render Education
@@ -287,88 +316,88 @@
   /**
  * Render Skills
  */
-const renderSkills = (skills) => {
-  const container = select('.skills-content');
-  if (!container || !skills) return;
+  const renderSkills = (skills) => {
+    const container = select('.skills-content');
+    if (!container || !skills) return;
 
-  // Clear existing content
-  container.innerHTML = '';
+    // Clear existing content
+    container.innerHTML = '';
 
-  // Split skills into two columns
-  const midPoint = Math.ceil(skills.length / 2);
-  const firstColumn = skills.slice(0, midPoint);
-  const secondColumn = skills.slice(midPoint);
+    // Split skills into two columns
+    const midPoint = Math.ceil(skills.length / 2);
+    const firstColumn = skills.slice(0, midPoint);
+    const secondColumn = skills.slice(midPoint);
 
-  // Create first column
-  const col1 = document.createElement('div');
-  col1.className = 'col-lg-6';
-  col1.setAttribute('data-aos', 'fade-up');
-  
-  firstColumn.forEach(skill => {
-    col1.appendChild(createSkillElement(skill));
-  });
+    // Create first column
+    const col1 = document.createElement('div');
+    col1.className = 'col-lg-6';
+    col1.setAttribute('data-aos', 'fade-up');
 
-  // Create second column
-  const col2 = document.createElement('div');
-  col2.className = 'col-lg-6';
-  col2.setAttribute('data-aos', 'fade-up');
-  col2.setAttribute('data-aos-delay', '100');
-  
-  secondColumn.forEach(skill => {
-    col2.appendChild(createSkillElement(skill));
-  });
+    firstColumn.forEach(skill => {
+      col1.appendChild(createSkillElement(skill));
+    });
 
-  // Append columns to container
-  container.appendChild(col1);
-  container.appendChild(col2);
+    // Create second column
+    const col2 = document.createElement('div');
+    col2.className = 'col-lg-6';
+    col2.setAttribute('data-aos', 'fade-up');
+    col2.setAttribute('data-aos-delay', '100');
 
-  // Initialize skills animation
-  initSkillsAnimation();
-};
+    secondColumn.forEach(skill => {
+      col2.appendChild(createSkillElement(skill));
+    });
 
-const createSkillElement = (skill) => {
-  const progressDiv = document.createElement('div');
-  progressDiv.className = 'progress';
-  
-  const skillSpan = document.createElement('span');
-  skillSpan.className = 'skill';
-  skillSpan.innerHTML = `${skill.name} <i class="val">${skill.level}%</i>`;
-  
-  const progressBarWrap = document.createElement('div');
-  progressBarWrap.className = 'progress-bar-wrap';
-  
-  const progressBar = document.createElement('div');
-  progressBar.className = 'progress-bar';
-  progressBar.setAttribute('role', 'progressbar');
-  progressBar.setAttribute('aria-valuenow', skill.level);
-  progressBar.setAttribute('aria-valuemin', '0');
-  progressBar.setAttribute('aria-valuemax', '100');
-  
-  progressBarWrap.appendChild(progressBar);
-  progressDiv.appendChild(skillSpan);
-  progressDiv.appendChild(progressBarWrap);
-  
-  return progressDiv;
-};
+    // Append columns to container
+    container.appendChild(col1);
+    container.appendChild(col2);
 
-/**
- * Initialize skills animation
- */
-const initSkillsAnimation = () => {
-  const skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-};
+    // Initialize skills animation
+    initSkillsAnimation();
+  };
+
+  const createSkillElement = (skill) => {
+    const progressDiv = document.createElement('div');
+    progressDiv.className = 'progress';
+
+    const skillSpan = document.createElement('span');
+    skillSpan.className = 'skill';
+    skillSpan.innerHTML = `${skill.name} <i class="val">${skill.level}%</i>`;
+
+    const progressBarWrap = document.createElement('div');
+    progressBarWrap.className = 'progress-bar-wrap';
+
+    const progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar';
+    progressBar.setAttribute('role', 'progressbar');
+    progressBar.setAttribute('aria-valuenow', skill.level);
+    progressBar.setAttribute('aria-valuemin', '0');
+    progressBar.setAttribute('aria-valuemax', '100');
+
+    progressBarWrap.appendChild(progressBar);
+    progressDiv.appendChild(skillSpan);
+    progressDiv.appendChild(progressBarWrap);
+
+    return progressDiv;
+  };
+
+  /**
+   * Initialize skills animation
+   */
+  const initSkillsAnimation = () => {
+    const skilsContent = select('.skills-content');
+    if (skilsContent) {
+      new Waypoint({
+        element: skilsContent,
+        offset: '80%',
+        handler: function (direction) {
+          let progress = select('.progress .progress-bar', true);
+          progress.forEach((el) => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%'
+          });
+        }
+      })
+    }
+  };
 
   /**
    * Initialize Isotope filters
