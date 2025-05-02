@@ -3,18 +3,22 @@
 
 <head>
    <meta charset="utf-8">
-   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Hamza Siddiqui - Cloud DevOps Engineer, Full-stack Developer, and Robotic Engineer">
+   <meta name="keywords" content="Cloud DevOps, Full-stack Developer, Robotic Engineer, AWS, Node.js, TypeScript">
    <title>Hamza Siddiqui</title>
-   <meta content="" name="description">
-   <meta content="" name="keywords">
    <!-- Favicons -->
-   <link href="assets/img/logo.png" rel="icon">
-   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+   <link rel="icon" href="assets/img/logo.png">
+   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+   <!-- Preload critical assets -->
+   <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+   <link rel="preload" href="assets/css/style.css" as="style">
+   <link rel="preload" href="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" as="script">
    <!-- Google Fonts -->
-   <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet">
-   <!-- Vendor CSS Files -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <!-- Vendor CSS -->
    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -30,44 +34,32 @@
 
 <body>
    <!-- ======= Mobile nav toggle button ======= -->
-   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+   <i class="bi bi-list mobile-nav-toggle d-xl-none" aria-label="Toggle navigation"></i>
    <!-- ======= Header ======= -->
    <header id="header">
       <div class="d-flex flex-column">
          <div class="profile">
-            <a href="#hero" class="nav-link scrollto active"><img src="assets/img/profile-pic.jpg" alt=""
-                  class="img-fluid rounded-circle">
+            <a href="#hero" class="nav-link scrollto active">
+               <img src="assets/img/profile-pic.jpg" alt="Hamza Siddiqui" class="img-fluid rounded-circle" width="150" height="150">
                <h1 class="text-light">Hamza Siddiqui</h1>
             </a>
             <div class="social-links mt-3 text-center">
-               <a href="https://github.com/HamzaSid020" class="github" target="_blank"><i class="bx bxl-github">
-                  </i></a>
-               <a href="https://www.facebook.com/HamzaSiddiqui020" class="facebook" target="_blank"><i
-                     class="bx bxl-facebook"></i></a>
-               <a href="https://www.instagram.com/hamz.sidd/" class="instagram" target="_blank"><i
-                     class="bx bxl-instagram"></i></a>
-               <a href="https://www.linkedin.com/in/hamzahmedsiddiqui/" class="linkedin" target="_blank"><i
-                     class="bx bxl-linkedin"></i></a>
+               <a href="https://github.com/HamzaSid020" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+               <a href="https://www.facebook.com/HamzaSiddiqui020" class="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+               <a href="https://www.instagram.com/hamz.sidd/" class="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+               <a href="https://www.linkedin.com/in/hamzahmedsiddiqui/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
             </div>
          </div>
          <nav id="navbar" class="nav-menu navbar">
             <ul>
-               <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user-circle"></i> <span>About</span></a>
-               </li>
-               <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-detail"></i> <span>Resume</span></a>
-               </li>
-               <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-meteor"></i> <span>Skills</span></a>
-               </li>
-               <li><a href="#education" class="nav-link scrollto"><i class="bx bx-book-open"></i>
-                     <span>Education</span></a></li>
-               <li><a href="#project" class="nav-link scrollto"><i class="bx bx-windows"></i>
-                     <span>Projects</span></a></li>
-               <li><a href="#certification" class="nav-link scrollto"><i class="bx bx-medal"></i>
-                     <span>Certifications</span></a></li>
-               <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-user-check"></i>
-                     <span>Testimonials</span></a></li>
-               <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a>
-               </li>
+               <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user-circle" aria-hidden="true"></i><span>About</span></a></li>
+               <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-detail" aria-hidden="true"></i><span>Resume</span></a></li>
+               <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-meteor" aria-hidden="true"></i><span>Skills</span></a></li>
+               <li><a href="#education" class="nav-link scrollto"><i class="bx bx-book-open" aria-hidden="true"></i><span>Education</span></a></li>
+               <li><a href="#project" class="nav-link scrollto"><i class="bx bx-windows" aria-hidden="true"></i><span>Projects</span></a></li>
+               <li><a href="#certification" class="nav-link scrollto"><i class="bx bx-medal" aria-hidden="true"></i><span>Certifications</span></a></li>
+               <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-user-check" aria-hidden="true"></i><span>Testimonials</span></a></li>
+               <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
             </ul>
          </nav>
          <!-- .nav-menu -->
@@ -182,8 +174,13 @@
                      <h4>BEng Robotic Engineering</h4>
                      <h5>2018 - 2021</h5>
                      <p><em>University of Essex, Colchester, UK</em></p>
-                     <p>Focus areas: Programming (Java/C++), AI & Intelligent Agents, Robotics & Control Systems<br>
-                        Key courses: Mobile Apps, AI, Robotics, Computer Vision, Digital Systems</p>
+                     <p>
+                        <b>Concentration 1:</b> Java &amp; C++ Programming; <br><b>Concentration 2:</b> Artificial
+                        intelligence and intelligent agents;<br>
+                        <b>Concentration 3:</b> Sensors, motion control algorithms &amp; high-level cognition.<br>
+                        <b>Courses:</b> Mobile Application Development, AI, Mobile Robotics, Computer Vision, Digital
+                        Electronic system &amp; Application Programming
+                     </p>
                   </div>
                   <div class="resume-item">
                      <h4>A-Levels & O-Levels</h4>
@@ -196,22 +193,33 @@
                      <h5>2018 – 2021</h5>
                      <p><em>University of Essex, UK</em></p>
                      <ul>
-                        <li>Led cultural events showcasing communication and problem-solving skills</li>
-                        <li>Achieved Gold Standard accreditation in 2020 for leadership excellence</li>
-                        <li>Built inclusive, high-performance team culture</li>
+                        <li>Coordinated cultural events, showcasing communication skills and problem-solving for
+                           collaboration.</li>
+                        <li>Drove innovative initiatives, earning Gold Standard accreditation in 2020 for leadership.
+                        </li>
+                        <li>Fostered team synergy, aligning with inclusive, high-performance cultures.</li>
                      </ul>
                   </div>
                </div>
                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                  <h3 class="resume-title">Professional Experience</h3>
+                  <div class="row">
+                     <div class="col-md-8">
+                        <h3 class="resume-title">Professional Experience</h3>
+                     </div>
+                  </div>
                   <div class="resume-item">
                      <h4>Cloud Developer</h4>
                      <h5>January 2025 – March 2025</h5>
                      <p><em>Ecomtent, Toronto, Canada</em></p>
                      <ul>
-                        <li>Architected cloud-native AWS solutions using Node.js/Terraform with Athena, Glue, S3 and DynamoDB</li>
-                        <li>Developed TypeScript serverless workflows improving visualization by 25%</li>
-                        <li>Optimized pipelines and DynamoDB, increasing data accuracy by 30%</li>
+                        <li>Designed cloud-native AWS integrations using Node.js and Terraform, streamlining financial
+                           analytics with Athena, Glue, S3, and DynamoDB, enhancing solution design for secure
+                           dashboards (<a href="#portfolio">see MediTrack project</a>).</li>
+                        <li>Developed 10+ TypeScript scripts for serverless workflows, improving visualization clarity
+                           by 25% and automating CI/CD with robust configuration management and cloud security
+                           protocols.</li>
+                        <li>Resolved 15+ pipeline bottlenecks through systematic debugging, boosting data accuracy by
+                           30% and optimizing DynamoDB for scalable, secure cloud applications.</li>
                      </ul>
                   </div>
                   <div class="resume-item">
@@ -219,9 +227,16 @@
                      <h5>Oct 2023 – Jan 2024</h5>
                      <p><em>Chemical 101, Toronto, Canada</em></p>
                      <ul>
-                        <li>Built JavaScript data extraction system for Google Scholar research</li>
-                        <li>Implemented secure web scraping with rotating proxies</li>
-                        <li>Optimized data processing workflows for improved accuracy and speed</li>
+                        <li>Led data extraction from Google Scholar using custom JavaScript scripts, compiling
+                           comprehensive lists including email addresses, which facilitated targeted communication and
+                           outreach for research collaborations.</li>
+                        <li>Implemented rotating proxies for secure web scraping, optimizing data capabilities and
+                           communication within the scientific community by ensuring anonymity and preventing IP
+                           blocks,
+                           thereby enhancing the efficiency of data collection processes.</li>
+                        <li>Demonstrated JavaScript expertise to enhance data extraction and manipulation efficiency,
+                           significantly reducing processing time and increasing the accuracy of the extracted
+                           information.</li>
                      </ul>
                   </div>
                   <div class="resume-item">
@@ -229,20 +244,32 @@
                      <h5>Jan 2022 - Aug 2023</h5>
                      <p><em>Dematic Software, Manchester, UK</em></p>
                      <ul>
-                        <li>Led Central Technology Hub development integrating 5+ legacy systems</li>
-                        <li>Optimized SQL/PostgreSQL performance by 35% through indexing</li>
-                        <li>Migrated monolith to microservices architecture</li>
-                        <li>Managed Git migration with documentation and training</li>
+                        <li>Spearheaded the development of the Central Technology Hub (CTH), integrating ETL workflows &
+                           APIs to consolidate data from 5+ legacy systems, improving accessibility for 500+ users.
+                        </li>
+                        <li>Designed and maintained MS SQL Server and PostgreSQL databases, optimizing query performance
+                           by 35% through
+                           indexing and schema migrations.</li>
+                        <li>Migrated monolithic components to SOA/microservices & enabled modular scalability.</li>
+                        <li>Led the transition from Mercurial to Git, creating comprehensive documentation & training
+                           materials, reducing onboarding time.</li>
                      </ul>
                   </div>
                   <div class="resume-item">
                      <h4>Technology Intern</h4>
                      <h5>March 2021 – April 2021</h5>
-                     <p><em>Bright Network, UK</em></p>
+                     <p><em>Bright Network, United Kingdom</em></p>
                      <ul>
-                        <li>Participated in IoT, data management and software development workshops</li>
-                        <li>Collaborated on real-world projects with industry professionals</li>
-                        <li>Applied clean code principles and best practices</li>
+                        <li>Gained insights into the Technology sector by engaging with leading employers and adapting
+                           skills for digital transformation, which included understanding the latest trends and
+                           technologies in the industry.</li>
+                        <li>Participated in workshops on IoT, data management, software development, clean code, and
+                           complex problem-solving, gaining practical knowledge and hands-on experience in cutting-edge
+                           technologies and methodologies.</li>
+                        <li>Collaborated with peers and industry professionals to work on real-world projects, enhancing
+                           teamwork and project management skills.</li>
+                        <li>Learned to apply clean code principles, improving code readability and maintainability,
+                           which is crucial for long-term software projects.</li>
                      </ul>
                   </div>
                </div>
@@ -417,20 +444,18 @@
       <!-- End Contact Section -->
    </main>
    <!-- End #main -->
-   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-         class="bi bi-arrow-up-short"></i></a>
-   <!-- Vendor JS Files -->
-   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-   <script src="assets/vendor/aos/aos.js"></script>
-   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-   <script src="assets/vendor/php-email-form/validate.js"></script>
-   <!-- Template Main JS File -->
-   <script src="assets/js/main.js"></script>
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+   <!-- Defer non-critical JavaScript -->
+   <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+   <script defer src="assets/vendor/aos/aos.js"></script>
+   <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script defer src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+   <script defer src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+   <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+   <script defer src="assets/vendor/typed.js/typed.umd.js"></script>
+   <script defer src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+   <script defer src="assets/vendor/php-email-form/validate.js"></script>
+   <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>
