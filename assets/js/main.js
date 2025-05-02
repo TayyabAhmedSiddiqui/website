@@ -2,233 +2,226 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function () {
+(() => {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
+  // Cache DOM selections
+  const DOM = {
+    body: document.querySelector('body'),
+    navbar: document.querySelector('#navbar'),
+    backToTop: document.querySelector('.back-to-top'),
+    typed: document.querySelector('.typed'),
+    skillsContent: document.querySelector('.skills-content'),
+    projectContainer: document.querySelector('.project-container'),
+    educationContainer: document.querySelector('.education-container'),
+    certificationContainer: document.querySelector('#certification .container .row'),
+    testimonialsSlider: document.querySelector('.testimonials-slider .swiper-wrapper')
+  };
+
+  // Debounce function for performance
+  const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
 
   /**
-   * Easy event listener function
+   * Optimized selector helper function with caching
+   */
+  const select = (() => {
+    const cache = new Map();
+    
+    return (el, all = false) => {
+      const key = `${el}-${all}`;
+      if (cache.has(key)) return cache.get(key);
+      
+      const result = all ? 
+        [...document.querySelectorAll(el.trim())] : 
+        document.querySelector(el.trim());
+      
+      cache.set(key, result);
+      return result;
+    };
+  })();
+
+  /**
+   * Optimized event listener with delegation
    */
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
+    const selectEl = select(el, all);
+    if (!selectEl) return;
+
+    if (all) {
+      selectEl.forEach(e => e.addEventListener(type, listener, { passive: true }));
+    } else {
+      selectEl.addEventListener(type, listener, { passive: true });
     }
-  }
+  };
 
   /**
-   * Easy on scroll event listener 
+   * Optimized scroll event listener
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
+    el.addEventListener('scroll', debounce(listener, 100), { passive: true });
+  };
 
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
+  const navbarlinksActive = debounce(() => {
+    const position = window.scrollY + 200;
+    const navbarlinks = select('#navbar .scrollto', true);
+    
+    navbarlinks?.forEach(navbarlink => {
+      if (!navbarlink.hash) return;
+      const section = select(navbarlink.hash);
+      if (!section) return;
+      
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
+        navbarlink.classList.add('active');
       } else {
-        navbarlink.classList.remove('active')
+        navbarlink.classList.remove('active');
       }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+    });
+  }, 100);
 
   /**
-   * Scrolls to an element with header offset
+   * Smooth scroll with header offset
    */
   const scrollto = (el) => {
-    let elementPos = select(el).offsetTop
+    const elementPos = select(el)?.offsetTop ?? 0;
     window.scrollTo({
       top: elementPos,
       behavior: 'smooth'
-    })
+    });
+  };
+
+  /**
+   * Back to top button handler
+   */
+  if (DOM.backToTop) {
+    const toggleBacktotop = debounce(() => {
+      DOM.backToTop.classList.toggle('active', window.scrollY > 100);
+    }, 100);
+
+    window.addEventListener('load', toggleBacktotop, { passive: true });
+    onscroll(document, toggleBacktotop);
   }
 
   /**
-   * Back to top button
+   * Mobile nav toggle with event delegation
    */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+  document.addEventListener('click', (e) => {
+    const toggle = e.target.closest('.mobile-nav-toggle');
+    if (!toggle) return;
+
+    DOM.body.classList.toggle('mobile-nav-active');
+    toggle.classList.toggle('bi-list');
+    toggle.classList.toggle('bi-x');
+  }, { passive: true });
 
   /**
-   * Mobile nav toggle
+   * Scroll with offset on links with event delegation
    */
-  on('click', '.mobile-nav-toggle', function (e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('.scrollto');
+    if (!link || !select(link.hash)) return;
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function (e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
+    e.preventDefault();
+    if (DOM.body.classList.contains('mobile-nav-active')) {
+      DOM.body.classList.remove('mobile-nav-active');
+      const navbarToggle = select('.mobile-nav-toggle');
+      navbarToggle?.classList.toggle('bi-list');
+      navbarToggle?.classList.toggle('bi-x');
     }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
+    scrollto(link.hash);
   });
 
   /**
-   * Hero type effect
-   */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function (direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Load and render dynamic data
+   * Load and render dynamic data with better error handling
    */
   const loadData = async () => {
     try {
       const response = await fetch('assets/data.json');
-      if (!response.ok) throw new Error('Network response was not ok');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
 
-      renderProjects(data.projects);
-      renderEducation(data.education);
-      renderCertifications(data.certifications);
-      renderTestimonials(data.testimonials);
-      renderSkills(data.skills); // Add this line
+      await Promise.all([
+        renderProjects(data.projects),
+        renderEducation(data.education),
+        renderCertifications(data.certifications),
+        renderTestimonials(data.testimonials),
+        renderSkills(data.skills)
+      ]);
 
-      // Initialize Isotope after data is loaded
       initIsotopeFilters();
     } catch (error) {
       console.error('Error loading data:', error);
+      // Show user-friendly error message
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'alert alert-danger';
+      errorMessage.textContent = 'Failed to load content. Please refresh the page or try again later.';
+      document.body.insertBefore(errorMessage, document.body.firstChild);
     }
   };
 
-
   /**
-   * Render Projects
+   * Optimized render functions using DocumentFragment
    */
   const renderProjects = (projects) => {
-    const container = select('.project-container');
-    if (!container) return;
+    if (!DOM.projectContainer || !projects?.length) return;
 
-    container.innerHTML = projects.map(project => {
+    const fragment = document.createDocumentFragment();
+    projects.forEach(project => {
       const useYoutubeThumbnail = project.youtubeId && !project.image;
       const thumbnailSrc = useYoutubeThumbnail
         ? `https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg`
         : project.image;
 
-      return `
-    <div class="col-lg-4 col-md-6 project-item filter-${project.category}">
-      <div class="project-wrap">
-        <img src="${thumbnailSrc}" class="img-fluid" alt="${project.title || ''}">
-        <div class="project-links">
-          ${useYoutubeThumbnail ? `
-            <a href="https://www.youtube.com/watch?v=${project.youtubeId}" 
-               data-gallery="portfolioGallery" 
-               class="project-lightbox" 
-               title="${project.lightboxTitle || project.title || ''}">
-              <i class="bx bx-play"></i>
-            </a>
-          ` : `
-            <a href="${project.image}" 
-               data-gallery="portfolioGallery" 
-               class="project-lightbox" 
-               title="${project.lightboxTitle || project.title || ''}">
-              <i class="bx bx-plus"></i>
-            </a>
-          `}
-          ${project.github ? `
-            <a href="${project.github}" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               title="View on GitHub">
-              <i class="bx bxl-github"></i>
-            </a>
-          ` : `
-            <a href="#project" title="More Details">
-              <i class="bx bx-link"></i>
-            </a>
-          `}
-        </div>
-      </div>
-    </div>
-    `;
-    }).join('');
+      const div = document.createElement('div');
+      div.className = `col-lg-4 col-md-6 project-item filter-${project.category}`;
+      div.innerHTML = `
+        <div class="project-wrap">
+          <img src="${thumbnailSrc}" class="img-fluid" alt="${project.title || ''}" loading="lazy">
+          <div class="project-links">
+            ${useYoutubeThumbnail 
+              ? `<a href="https://www.youtube.com/watch?v=${project.youtubeId}" 
+                   data-gallery="portfolioGallery" 
+                   class="project-lightbox" 
+                   title="${project.lightboxTitle || project.title || ''}">
+                   <i class="bx bx-play"></i>
+                 </a>`
+              : `<a href="${project.image}" 
+                   data-gallery="portfolioGallery" 
+                   class="project-lightbox" 
+                   title="${project.lightboxTitle || project.title || ''}">
+                   <i class="bx bx-plus"></i>
+                 </a>`
+            }
+            ${project.github 
+              ? `<a href="${project.github}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   title="View on GitHub">
+                   <i class="bx bxl-github"></i>
+                 </a>`
+              : `<a href="#project" title="More Details">
+                   <i class="bx bx-link"></i>
+                 </a>`
+            }
+          </div>
+        </div>`;
+      fragment.appendChild(div);
+    });
+
+    DOM.projectContainer.innerHTML = '';
+    DOM.projectContainer.appendChild(fragment);
   };
 
   /**
@@ -314,8 +307,8 @@
   };
 
   /**
- * Render Skills
- */
+   * Render Skills
+   */
   const renderSkills = (skills) => {
     const container = select('.skills-content');
     if (!container || !skills) return;
@@ -519,22 +512,46 @@
   });
 
   /**
-   * Initialize all components
+   * Lazy initialization of components
    */
-  const init = () => {
-    // Load dynamic data first
-    loadData().then(() => {
-      // Then initialize other components
-      initPortfolioLightbox();
-      initProjectDetailsSlider();
-      initTestimonialsSlider();
+  const lazyInit = () => {
+    // Initialize components that require immediate loading
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
     });
 
-    // Initialize components that don't depend on data
-    initAOS();
+    // Initialize typed effect if element exists
+    if (DOM.typed) {
+      const typed_strings = DOM.typed.getAttribute('data-typed-items')?.split(',') ?? [];
+      new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    }
+
+    // Load dynamic data and initialize dependent components
+    loadData().then(() => {
+      requestAnimationFrame(() => {
+        initPortfolioLightbox();
+        initProjectDetailsSlider();
+        initTestimonialsSlider();
+      });
+    });
+
+    // Initialize counter
     new PureCounter();
   };
 
-  // Start everything
-  window.addEventListener('load', init);
+  // Initialize everything when DOM is fully loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', lazyInit);
+  } else {
+    lazyInit();
+  }
 })();
