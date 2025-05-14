@@ -153,11 +153,18 @@
   ],
   "education": [
     {
-      "id": 1,
+      "id": 0,
       "title": "Cloud Architecture & Administration",
       "category": "graduate",
-      "image": "assets/img/education/graduate/education-1.jpg",
+      "image": "assets/img/education/graduate/education-3.jpg",
       "description": "Graduate Certificate | Seneca College"
+    },
+    {
+      "id": 1,
+      "title": "Computer Applications Development",
+      "category": "graduate",
+      "image": "assets/img/education/graduate/education-1.jpg",
+      "description": "Graduate Certificate | Conestoga College"
     },
     {
       "id": 2,
