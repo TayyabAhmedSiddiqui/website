@@ -496,6 +496,14 @@
       "image": "assets/img/certifications/certificate-18.jpg",
       "link": "https://www.credly.com/go/ks9AkrTy",
       "delay": 400
+    },
+    {
+      "id": 15,
+      "title": "Introduction to GraphQL and Apollo Server",
+      "icon": "bi bi-graph-up",
+      "image": "assets/img/certifications/certificate-19.png",
+      "link": "https://codesignal.com/learn/certificates/cmbxaoqqa00gcjr04unt8z15k/courses/753",
+      "delay": 400
     }
   ],
   "testimonials": [
